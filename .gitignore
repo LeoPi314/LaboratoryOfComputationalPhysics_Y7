@@ -1,0 +1,3 @@
+$ cat .gitignore
+# exlude GitInstruction.txt file
+/GitInstruction.txt

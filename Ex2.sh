@@ -42,8 +42,12 @@ then
     echo "This program requires an input grater than 1 for normalization"
     exit
 fi
-
-
+for (( i=1; i<=$1; i++ ))
+do
+    #-v passes i as a variable to awk; cycle over NF Number of Fields; $j content of j field, 
+    #check if field equal to number and end ($); then print as float j/i
+    awk -v i="$i" '{for(j=1;j<=NF;j++) if($j~/^[0-9]+$/) $j=sprintf("%.1f",$j/i)}1' data.txt > "data$i.csv"
+    done
 #[0-9]* for zero or more numbers; [0-9][0-9]* one or more; etc. those are patterns with 2 and 3 element resp. \1 \2 \3
 # % echo "123 abc" | sed 's/[0-9]*/& &/'
 # 123 123 abc

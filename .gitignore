@@ -1,0 +1,5 @@
+$ cat .gitignore
+# exlude GitInstruction.txt file
+/GitInstruction.txt
+# exclude jupyter checkpoints
+/.ipynb_checkpoints/

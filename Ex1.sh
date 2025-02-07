@@ -15,7 +15,7 @@ grep "PoD" LCP_22-23_students.csv > LCP_22-23_PoD_students.csv #copy only lines 
 grep "Physics" LCP_22-23_students.csv > LCP_22-23_Physics_students.csv #copy only lines including Physics from file A to file B
 max=0 #setting a local variable (lowercase) to search maximum
 max_L='A' #setting a local variable (lowercase) to search maximum corresponding letter
-for i in {A..Z} #i assumes values in the alphabet capital letters23_students
+for i in {A..Z} #i assumes values in the alphabet capital letters
 do
     # to j is assgined the return of the previous computed part inside `, the left part is executed then passed as input to the right part
     j=`grep -v -e  "^Family" LCP_22-23_students.csv | grep -c "^$i" LCP_22-23_students.csv` # first gives lines without Family Name (-v exludes -e is followed by the relative element), second counts starting with A
